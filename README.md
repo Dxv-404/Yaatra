@@ -1,9 +1,6 @@
-Here's the `README.md` content you can directly copy and paste into your project:
+# 🌍 **यात्रा** 🇮🇳
 
-```markdown
-# 🌍 **Yaatra** & **Safar** - Your Ultimate Travel Companion 🇮🇳
-
-Welcome to **Yaatra** and **Safar**! This integrated platform offers a seamless experience for discovering travel destinations across India and booking trips effortlessly.
+Welcome to **यात्रा** and **सफ़र**! This integrated platform offers a seamless experience for discovering travel destinations across India and booking trips effortlessly.
 
 ---
 
@@ -41,30 +38,63 @@ Welcome to **Yaatra** and **Safar**! This integrated platform offers a seamless 
 
 ## 🖥️ **Screenshots**
 
+### Yaatra Login Page 💻
+![Yaatra Login Page](screenshots/yaatra_login.png)
+
 ### Yaatra Home Page 🌐
 ![Yaatra Home Page](screenshots/yaatra_home.png)
 
-### Safar Booking Page 🛒
-![Safar Booking Page](screenshots/safar_booking.png)
 
-> Add more screenshots to showcase specific features or pages!
+### Yaatra Summer Page🌞
+![Yaatra Summer Page](screenshots/yaatra_summer_manali.png)
+
+
+### Yaatra Rain Page🌧️
+![Yaatra Rain Page](screenshots/yaatra_rain_munnar.png)
+
+
+### Yaatra Winter Page❄️
+![Yaatra WInter Page](screenshots/yaatra_winter_gangtok.png)
+
+---
+
+### Safar Home Page ✨
+![Safar Home Page](screenshots/safar_home.png)
+
+### Safar Booking Page 🛒
+![Safar Booking Page](screenshots/safar_booking_bus.png)
+
+### Safar Seat Selection Page 💺
+![Safar Seat Selection Page](screenshots/safar_seat_selection_flight.png)
+
+### Safar Search Page 🔎
+![Safar Search Page](screenshots/safar_search_page.png)
+
+### Safar Confirmation Page ✔️
+![Safar Confirmation Page](screenshots/safar_confirmation_page.png)
+
 
 ---
 
 ## 📂 **Project Structure**
 
-```
+```plaintext
 Yaatra-Safar/
-├── assets/             # Images, videos, and other media assets
+├── assets/                                                       # Images, videos, and other media assets
 ├── project/
-│   ├── yaatra.html     # Main HTML for Yaatra
-│   ├── safar.html      # Main HTML for Safar
-│   ├── style.css       # Shared CSS for styling
-│   ├── yaatra.js       # JavaScript for Yaatra functionalities
-│   ├── safar.js        # JavaScript for Safar functionalities
-│   └── ...             # Additional files
-├── screenshots/        # Screenshots for README and documentation
-└── README.md           # Project documentation
+│   ├── index.php                                                 # Login Page for Safar
+│   ├── home.php                                                  # Home Page for Safar
+│   ├── booking.php                                               # Booking Page for Safar
+│   ├── seat_selection_bus.php                                    # Seat Selection Pages for Safar
+│   └── ...                                                       # Additional files
+├── screenshots/                                                  # Screenshots for README and documentation
+├── yaatra.html                                                   # Main HTML for Yaatra
+├── yaatra-1.html                                                 # Redirected page
+├── rain.html                                                     # Main HTML for Rain Page 
+├── summer.html                                                   # HTML for Summer Page
+├── winter.html                                                   # HTML for Winter Page
+├── yaatra_login.html                                             # HTML for Login Page
+└── README.md                                                     # Project documentation
 ```
 
 ---
@@ -79,12 +109,12 @@ Yaatra-Safar/
    ```
 
 2. **Open the project:**
-   - For **Yaatra**, open `project/yaatra.html` in a modern browser.
-   - For **Safar**, open `project/safar.html` in a modern browser.
+   - For **Yaatra**, open `yaatra.html` in a modern browser.
+   - For **Safar**, open `localhost/project/home.php` in a modern browser.
 
 3. **Customize:**
-   - Modify `style.css` for styling changes.
-   - Update `yaatra.js` and `safar.js` for functionality tweaks.
+   - Modify `yaatra.html` or `project/home.html` for styling changes.
+   - Update other files like  `rain.html` or `project/booking.php` for additional feature tweaks.
 
 ---
 
@@ -94,13 +124,18 @@ Yaatra-Safar/
 - **CSS3**: Styling and layout.
 - **JavaScript**: Interactivity and dynamic content.
 - **PHP**: Server-side processing.
+- **SQL**: Database for Safar
 
 ---
 
-## 🌐 **Live Demo**
+## 🌐 **Video Demo**
 
-Experience the platform live: [Yaatra & Safar Live Demo](#)  
-*(Replace `#` with the live URL if hosted.)*
+Experience the platform live: [Yaatra & Safar Video Demo](#)  
+**
+<video width="100%" controls>
+  <source src="screenshots/screen-capture.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -136,8 +171,7 @@ We welcome contributions! 🎉
 ## 📧 **Contact**
 
 For feedback or inquiries:  
-📩 **your.email@example.com**  
-🌐 [Your Portfolio/Website](#)
+📩 **devkrishna6780@gmail.com**  
 
 ---
 
@@ -146,7 +180,8 @@ For feedback or inquiries:
 If you like **Yaatra** and **Safar**, please ⭐ this repository and share it with your friends! 🙌
 ```
 
-### Instructions:
-1. Replace `your.email@example.com` and `[Your Portfolio/Website](#)` with your actual email and portfolio link.
-2. Replace the `screenshots/yaatra_home.png` and `screenshots/safar_booking.png` with actual screenshot filenames and ensure they are saved in the `screenshots/` folder.
-3. If the project is hosted, update the `[Yaatra & Safar Live Demo](#)` link with the actual URL.
+### Steps to Fix the Issue:
+1. Open your `README.md` file in your GitHub repository or text editor.
+2. Replace the current content with the above markdown content.
+3. Commit the changes.
+4. Verify that the README renders properly on your repository's GitHub page.
