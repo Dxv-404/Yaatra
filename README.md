@@ -132,10 +132,8 @@ Yaatra-Safar/
 
 Experience the platform live: [Yaatra & Safar Video Demo](#)  
 **
-<video width="100%" controls>
-  <source src="screenshots/screen-capture.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+[Video Preview](screenshots/screen-capture.mp4)
+
 
 ---
 
