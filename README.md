@@ -1,13 +1,15 @@
 <p align="center">
-  <img src="screenshots/logo.png" alt="Project Logo" width="100">
-  <span style="font-size: 2em; font-weight: bold; margin-left: 10px;">यात्रा</span>
+  <span style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <img src="screenshots/logo_icon.png" alt="Project Logo" width="350">
+    <strong style="font-size: 16em;">यात्रा</strong>
+  </span>
 </p>
 
 <p align="center">
-  <a href="https://github.com/your-repo-name">
+  <a href="https://github.com/Dxv-404/Yaatra">
     <img src="https://img.shields.io/badge/version-1.0.0-orange" alt="version">
   </a>
-  <a href="https://github.com/your-repo-name/stargazers">
+  <a href="https://github.com/Dxv-404/Yaatra/stargazers">
     <img src="https://img.shields.io/github/stars/Yaatra?style=social" alt="stars">
   </a>
 </p>
