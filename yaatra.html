@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>यात्रा</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: #000;
+      transition: background 4s ease;
+      overflow: hidden;
+    }
+
+    /* Intro Animation Styles */
+    .intro-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000;
+      z-index: 10;
+    }
+
+    .intro-text {
+      font-size: 150px;
+      font-family: 'Noto Sans', sans-serif;
+      color: #fff;
+      opacity: 1;
+      animation: changeLanguage 4s steps(7) forwards, fadeOut 1s 4s forwards;
+    }
+
+    /* Indian languages for Yaatra */
+    .intro-text::after {
+      content: "यात्रा"; /* Default content in Hindi */
+      animation: changeLanguage 4s steps(7) forwards;
+    }
+
+    /* Fade-out for intro after languages */
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* Animation for changing text between languages */
+    @keyframes changeLanguage {
+      0% { content: "यात्रा"; }     /* Hindi */
+      14.28% { content: "যাত্রা"; } /* Bengali */
+      28.57% { content: "યાત્રા"; } /* Gujarati */
+      42.85% { content: "യാത്ര"; }  /* Malayalam */
+      57.14% { content: "యాత్ర"; }  /* Telugu */
+      71.42% { content: "பயணம்"; }  /* Tamil */
+      85.71% { content: "ಯಾತ್ರೆ"; }  /* Kannada */
+      100% { content: "यात्रा"; }    /* Back to Hindi */
+    }
+
+    /* Title Styles after Intro */
+    .title {
+      font-size: 540px;
+      font-family: 'Kshatriya', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+      animation: moveTitleUp 3s ease forwards;
+      opacity: 0;
+    }
+
+    /* Animation for the final title position */
+    @keyframes moveTitleUp {
+      0% {
+        transform: translateY(0);
+        opacity: 0;
+      }
+      50% {
+        font-size: 540px;
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        font-size: 100px;
+        transform: translateY(50px); /* Moved down a bit */
+        opacity: 1;
+      }
+    }
+
+      /* Safar Link Styles */
+    .safar-link {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      color: #fff;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0);
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      z-index: 100;
+      margin-bottom: 20px;
+    }
+
+    .safar-link:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    /* Black Container Styles */
+    .black-container {
+      width: 65%;
+      height: 70vh;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #000;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-image 0.5s ease;
+      opacity: 0;
+      position: relative;
+      animation: showContainer 2s ease forwards;
+      display: none;
+    }
+
+    /* Category Container Styles */
+    .category-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Category Styles */
+    .category {
+      width: 211px;
+      height: 495px;
+      margin: 52px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      position: relative;
+      text-decoration: none; /* Remove underline for links */
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    .category p {
+      font-size: 18px;
+      font-family: 'Satoshi', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .category img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Text Styles */
+    .season-text {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 48px;
+      font-family: 'Clash Display', sans-serif;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .black-container.summer-bg {
+      background-image: url('assets/summer.gif');
+      background-size: cover;
+    }
+
+    .black-container.winter-bg {
+      background-image: url('assets/winter.gif');
+      background-size: cover;
+    }
+
+    .black-container.rain-bg {
+      background-image: url('assets/rain.gif');
+      background-size: cover;
+    }
+
+    /* Animation to show the container */
+    @keyframes showContainer {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Popup Container Styles */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      z-index: 10;
+      display: none;
+      text-align: center;
+      font-family: 'Clash Display', sans-serif;
+    }
+
+    /* Blurred Background Video */
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 5;
+      filter: blur(8px);
+      display: none;
+    }
+
+    /* Close Button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #000;
+    }
+
+    /* Paper Plane */
+    .paper-plane {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: url('paper-plane.png') no-repeat center center;
+      background-size: contain;
+      animation: flyPlane 10s linear infinite;
+      z-index: 20;
+    }
+
+    .plane-trail {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 10px 10px;
+      opacity: 0;
+      animation: fadeTrail 1s ease forwards;
+    }
+
+    /* Paper plane fly animation */
+    @keyframes flyPlane {
+      0% { top: 10px; left: 10px; }
+      25% { top: 30%; left: 85%; }
+      50% { top: 75%; left: 60%; }
+      75% { top: 20%; left: 30%; }
+      100% { top: 10px; left: 10px; }
+    }
+
+    /* Fade-out trail */
+    @keyframes fadeTrail {
+      0% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Intro Animation -->
+  <div class="intro-container">
+    <div class="intro-text"></div>
+  </div>
+
+  <!-- Safar Link -->
+  <a href="http://localhost/project" class="safar-link">सफ़र</a>
+
+  <!-- Background Video -->
+  <video class="background-video" autoplay muted loop>
+    <source src="assets/summer_video.mp4" type="video/mp4">
+  </video>
+
+  <!-- Popup Container -->
+  <div class="popup" id="summer-popup">
+    <span class="close-btn" onclick="closePopup()">✕</span>
+    <h2>Top 5 Summer Destinations</h2>
+    <ul>
+      <li>Goa</li>
+      <li>Manali</li>
+      <li>Kerala</li>
+      <li>Jaipur</li>
+      <li>Andaman Islands</li>
+    </ul>
+  </div>
+
+  <!-- Title and Main Content -->
+  <h1 class="title">यात्रा</h1>
+
+  <div class="black-container"> 
+    <div class="category-container">
+      <a href="summer.html" class="category summer" onmouseover="document.querySelector('.black-container').classList.add('summer-bg'); document.querySelector('.season-text.summer').style.opacity = 1;" onmouseout="document.querySelector('.black-container').classList.remove('summer-bg'); document.querySelector('.season-text.summer').style.opacity = 0;">
+        <img src="assets/summer.jpg" alt="Summer">
+        <p>Experience the warmth of Indian summers</p>
+      </a>
+      <a href="winter.html" class="category winter" onmouseover="document.querySelector('.black-container').classList.add('winter-bg'); document.querySelector('.season-text.winter').style.opacity = 1;" onmouseout="document.querySelector('.black-container').classList.remove('winter-bg'); document.querySelector('.season-text.winter').style.opacity = 0;">
+        <img src="assets/winter.jpg" alt="Winter">
+        <p>Discover the chill of Indian winters</p>
+      </a>
+      <a href="rain.html" class="category rain" onmouseover="document.querySelector('.black-container').classList.add('rain-bg'); document.querySelector('.season-text.rain').style.opacity = 1;" onmouseout="document.querySelector('.black-container').classList.remove('rain-bg'); document.querySelector('.season-text.rain').style.opacity = 0;">
+        <img src="assets/rain.jpg" alt="Rain">
+        <p>Get drenched in the Indian monsoon</p>
+      </a>
+    </div>
+    <div class="season-text summer">Summer</div>
+    <div class="season-text winter">Winter</div>
+    <div class="season-text rain">Rain</div>
+  </div>
+
+  <!-- Paper Plane -->
+  <div class="paper-plane"></div>
+
+  <script>
+    // Show popup on click
+    function showPopup() {
+      document.getElementById('summer-popup').style.display = 'block';
+      document.querySelector('.background-video').style.display = 'block';
+    }
+
+    // Close popup
+    function closePopup() {
+      document.getElementById('summer-popup').style.display = 'none';
+      document.querySelector('.background-video').style.display = 'none';
+    }
+
+    // Show main content after intro
+    window.onload = function() {
+        setTimeout(() => {
+            document.querySelector('.intro-container').style.display = 'none';
+            document.querySelector('.title').style.display = 'block';
+            document.querySelector('.black-container').style.display = 'block';
+            document.getElementById('safar-link').style.display = 'block'; // Display Safar link after intro
+        }, 5000); // Matches intro timing
+    };// Updated to 5 seconds to match intro timing
+  </script>
+</body>
+</html>
