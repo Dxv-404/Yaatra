@@ -1,3 +1,17 @@
+<p align="center">
+  <img src="screenshots/logo.png" alt="Project Logo" width="100">
+  <span style="font-size: 2em; font-weight: bold; margin-left: 10px;">यात्रा</span>
+</p>
+
+<p align="center">
+  <a href="https://github.com/your-repo-name">
+    <img src="https://img.shields.io/badge/version-1.0.0-orange" alt="version">
+  </a>
+  <a href="https://github.com/your-repo-name/stargazers">
+    <img src="https://img.shields.io/github/stars/Yaatra?style=social" alt="stars">
+  </a>
+</p>
+
 # 🌍 **यात्रा** 🇮🇳
 
 Welcome to **यात्रा** and **सफ़र**! This integrated platform offers a seamless experience for discovering travel destinations across India and booking trips effortlessly.
