@@ -1,7 +1,6 @@
 <p align="center">
   <span style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <img src="screenshots/logo_icon.png" alt="Project Logo" width="350">
-    <strong style="font-size: 16em;">यात्रा</strong>
+    <img src="screenshots/logo_1.png" alt="Project Logo" width="450">
   </span>
 </p>
 
