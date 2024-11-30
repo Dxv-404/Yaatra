@@ -132,7 +132,7 @@ Yaatra-Safar/
 
 Experience the platform live: [Yaatra & Safar Video Demo](#)  
 **
-[Video Preview](screenshots/screen-capture.mp4)
+[![Video Demo](screenshots/thumbnail.png)](screenshots/screen-capture.mp4)
 
 
 ---
