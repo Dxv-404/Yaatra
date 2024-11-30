@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/badge/version-1.0.0-orange" alt="version">
   </a>
   <a href="https://github.com/Dxv-404/Yaatra/stargazers">
-    <img src="https://img.shields.io/github/stars/Yaatra?style=social" alt="stars">
+    <img src="https://img.shields.io/github/stars/Dxv-404/Yaatra?style=social" alt="stars">
   </a>
 </p>
 
